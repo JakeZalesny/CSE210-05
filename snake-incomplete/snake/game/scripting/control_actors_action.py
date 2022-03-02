@@ -1,7 +1,7 @@
 import constants
-from scripting.action import Action
-from shared.point import Point
-from services.keyboard_service import KeyboardService
+from game.scripting.action import Action
+from game.shared.point import Point
+from game.services.keyboard_service import KeyboardService
 
 
 class ControlActorsAction(Action):

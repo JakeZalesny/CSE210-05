@@ -1,6 +1,6 @@
-import sre_constants
-from shared.color import Color
-from shared.point import Point
+import constants
+from game.shared.color import Color
+from game.shared.point import Point
 
 
 class Actor:

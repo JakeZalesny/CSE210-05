@@ -1,4 +1,4 @@
-from scripting.action import Action
+from game.scripting.action import Action
 import pyray
 
 class MoveActorsAction(Action) :
