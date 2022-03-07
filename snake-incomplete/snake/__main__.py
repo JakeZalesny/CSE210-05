@@ -16,6 +16,7 @@ from game.shared.color import Color
 from game.shared.point import Point
 from game.scripting.move_actors_action import MoveActorsAction
 from game.casting.snake2 import Snake_Red
+from game.scripting.control_actors_action_RED import ControlActorsActionRed
 # Test Comment
 
 def main():
@@ -24,7 +25,7 @@ def main():
     cast = Cast()
     cast.add_actor("foods", Food())
     cast.add_actor("snakes", Snake())
-    cast.add_actor("snakes", Snake_Red())
+    cast.add_actor("snake_red", Snake_Red())
     cast.add_actor("scores", Score())
    
     # start the game
@@ -33,6 +34,7 @@ def main():
 
     script = Script()
     script.add_action("input", ControlActorsAction(keyboard_service))
+    script.add_action("input", ControlActorsActionRed(keyboard_service))
     script.add_action("update", MoveActorsAction())
     script.add_action("update", HandleCollisionsAction())
     script.add_action("output", DrawActorsAction(video_service))
