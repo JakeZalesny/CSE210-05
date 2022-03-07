@@ -17,6 +17,7 @@ from game.shared.point import Point
 from game.scripting.move_actors_action import MoveActorsAction
 
 
+
 def main():
     
     # create the cast
