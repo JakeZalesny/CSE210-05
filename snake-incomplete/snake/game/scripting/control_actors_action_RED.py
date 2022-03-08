@@ -31,19 +31,19 @@ class ControlActorsActionRed(Action):
             script (Script): The script of Actions in the game.
         """
         # left
-        if self._keyboard_service.is_key_down('j'):
+        if self._keyboard_service.is_key_down('j') and self._direction != Point(constants.CELL_SIZE, 0) :
             self._direction = Point(-constants.CELL_SIZE, 0)
         
         # right
-        if self._keyboard_service.is_key_down('l'):
+        if self._keyboard_service.is_key_down('l') and self._direction != Point(-constants.CELL_SIZE, 0)  :
             self._direction = Point(constants.CELL_SIZE, 0)
         
         # up
-        if self._keyboard_service.is_key_down('i'):
+        if self._keyboard_service.is_key_down('i') and self._direction != Point(0, constants.CELL_SIZE):
             self._direction = Point(0, -constants.CELL_SIZE)
         
         # down
-        if self._keyboard_service.is_key_down('k'):
+        if self._keyboard_service.is_key_down('k') and self._direction != Point(0, -constants.CELL_SIZE):
             self._direction = Point(0, constants.CELL_SIZE)
         
         red_snake = cast.get_first_actor("snake_red")
