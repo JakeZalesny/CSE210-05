@@ -15,6 +15,8 @@ from game.services.video_service import VideoService
 from game.shared.color import Color
 from game.shared.point import Point
 from game.scripting.move_actors_action import MoveActorsAction
+from game.casting.snake2 import Snake_Red
+# Test Comment
 
 def main():
     
@@ -22,6 +24,7 @@ def main():
     cast = Cast()
     cast.add_actor("foods", Food())
     cast.add_actor("snakes", Snake())
+    cast.add_actor("snakes", Snake_Red())
     cast.add_actor("scores", Score())
    
     # start the game
