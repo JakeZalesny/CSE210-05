@@ -4,7 +4,7 @@ from game.shared.point import Point
 from game.services.keyboard_service import KeyboardService
 
 
-class ControlActorsAction(Action):
+class ControlActorsActionRed(Action):
     """
     An input action that controls the snake.
     
@@ -31,20 +31,20 @@ class ControlActorsAction(Action):
             script (Script): The script of Actions in the game.
         """
         # left
-        if self._keyboard_service.is_key_down('a') and self._direction != Point(-constants.CELL_SIZE, 0):
+        if self._keyboard_service.is_key_down('j') and self._direction != Point(constants.CELL_SIZE, 0) :
             self._direction = Point(-constants.CELL_SIZE, 0)
         
         # right
-        if self._keyboard_service.is_key_down('d') and self._direction != Point(-constants.CELL_SIZE, 0):
+        if self._keyboard_service.is_key_down('l') and self._direction != Point(-constants.CELL_SIZE, 0)  :
             self._direction = Point(constants.CELL_SIZE, 0)
         
         # up
-        if self._keyboard_service.is_key_down('w') and self._direction != Point(0, constants.CELL_SIZE):
+        if self._keyboard_service.is_key_down('i') and self._direction != Point(0, constants.CELL_SIZE):
             self._direction = Point(0, -constants.CELL_SIZE)
         
         # down
-        if self._keyboard_service.is_key_down('s') and self._direction != Point(0, -constants.CELL_SIZE):
+        if self._keyboard_service.is_key_down('k') and self._direction != Point(0, -constants.CELL_SIZE):
             self._direction = Point(0, constants.CELL_SIZE)
         
-        snake = cast.get_first_actor("snakes")
-        snake.turn_head(self._direction)
+        red_snake = cast.get_first_actor("snake_red")
+        red_snake.turn_head(self._direction)

@@ -34,8 +34,8 @@ class Snake_Red(Snake):
             self._segments.append(segment)
     
     def _prepare_body(self):
-        x = int(constants.MAX_X % 3)
-        y = int(constants.MAX_Y % 3)
+        x = int(constants.MAX_X / 2)
+        y = int(constants.MAX_Y / 2)
 
         for i in range(constants.SNAKE_LENGTH):
             position = Point(x - i * constants.CELL_SIZE, y)
