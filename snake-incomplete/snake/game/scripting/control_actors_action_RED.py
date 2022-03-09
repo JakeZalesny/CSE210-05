@@ -21,7 +21,8 @@ class ControlActorsActionRed(Action):
             keyboard_service (KeyboardService): An instance of KeyboardService.
         """
         self._keyboard_service = keyboard_service
-        self._direction = Point(constants.CELL_SIZE, 0)
+        self._direction = constants.RIGHT
+
 
     def execute(self, cast, script):
         """Executes the control actors action.
@@ -32,19 +33,19 @@ class ControlActorsActionRed(Action):
         """
         # left
         if self._keyboard_service.is_key_down('j') and self._direction != constants.RIGHT :
-            self._direction = Point(-constants.CELL_SIZE, 0)
+            self._direction = constants.LEFT
         
         # right
         if self._keyboard_service.is_key_down('l') and self._direction != constants.LEFT  :
-            self._direction = Point(constants.CELL_SIZE, 0)
+            self._direction = constants.RIGHT
         
         # up
         if self._keyboard_service.is_key_down('i') and self._direction != constants.DOWN:
-            self._direction = Point(0, -constants.CELL_SIZE)
+            self._direction = constants.UP
         
         # down
         if self._keyboard_service.is_key_down('k') and self._direction != constants.UP:
-            self._direction = Point(0, constants.CELL_SIZE)
+            self._direction = constants.DOWN
         
         red_snake = cast.get_first_actor("snake_red")
         red_snake.turn_head(self._direction)
