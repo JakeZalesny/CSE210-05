@@ -87,7 +87,7 @@ class HandleCollisionsAction(Action):
         for red_segment in red_segments :
             if redhead.get_position().equals(red_segment.get_position()):
                 self._is_game_over = True
-                self._is_winner = True
+                self._is_winner = False
             
             if head.get_position().equals(red_segment.get_position()):
                 self._is_game_over = True
